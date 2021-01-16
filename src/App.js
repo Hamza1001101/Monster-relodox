@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import Main from "./components/Main";
+import Main from "./components/Main";
 import Template from "./components/Template";
 import "./App.css";
 
@@ -50,6 +50,7 @@ class App extends Component {
 
         <h4> {this.state.userinput} </h4>
         <div className="Card-wrapper">{filteredList}</div>
+        <Main />
       </div>
     );
   }
