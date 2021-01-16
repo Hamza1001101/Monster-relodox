@@ -1,5 +1,7 @@
-import Main from "./components/Main"
+
 import React, { Component } from 'react'
+import Main from "./components/Main"
+import Template from './components/Template'
 
 class App extends Component {
 
@@ -22,15 +24,18 @@ class App extends Component {
     
     render() {
         const { users } = this.state
-        const listRender = users.map((user) => {
-            return <li key={user.id}> {user.name} {user.email} </li>
+        const listRender = users.map(({id, name, username, email}) => {
+            return <Template key={id} name={name} username={username} email={email} />
         })
        return (
         <div>
             <h1>Welcome Home</h1>
                <Main />
-               {listRender}
-        </div>
+              
+                    {listRender}
+               </div>
+              
+        
     )
 
     }
