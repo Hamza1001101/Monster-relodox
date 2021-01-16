@@ -3,3 +3,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+.Input-card {
+    width: 12rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    outline: none;
+}

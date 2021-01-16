@@ -26,25 +26,30 @@ class App extends Component {
   };
 
   render() {
-    const { users } = this.state;
-    const listRender = users.map(({ id, name, username, email }) => {
-      return (
+    const { users, userinput } = this.state;
+
+    const filteredList = users
+      .filter((user) => {
+        return user.name.toLowerCase().includes(userinput.toLowerCase());
+      })
+      .map(({ id, username, name, email }) => (
         <Template key={id} name={name} username={username} email={email} />
-      );
-    });
+      ));
 
     return (
       <div style={{ width: `55rem` }}>
         <h1>Welcome Home</h1>
         <input
           type="text"
-          placeholder="Add Task"
+          placeholder="Search your fav monster...."
           name="userinput"
+          value={userinput}
           onChange={this.userHandler}
+          className="Input-card"
         />
 
         <h4> {this.state.userinput} </h4>
-        <div className="Card-wrapper">{listRender}</div>
+        <div className="Card-wrapper">{filteredList}</div>
       </div>
     );
   }
