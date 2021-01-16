@@ -4,12 +4,33 @@
     background-color: #95dada;
     border: 1px solid grey;
     border-radius: 5px;
-    padding: 20px;
+    text-align: center;
     cursor: pointer;
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transorm .25s ease-out;
+    margin: 2rem;
+    padding-bottom: 1.3rem;
 }
 .Card-container:hover {
     transform: scale(1.05);
+}
+
+.Search {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 240px;
+    line-height: 30px;
+    margin-bottom: 30px;
+  
+}
+.Search-container {
+    margin: 0 auto;
+      text-align: center;
+}
+.Header {
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
 }

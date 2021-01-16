@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Card from "./components/Card";
+import Searchbar from "./components/Searchbar";
 import "./App.css";
+
 
 class App extends Component {
   constructor(props) {
@@ -36,16 +38,8 @@ class App extends Component {
       ));
 
     return (
-      <div>
-        <h1>Welcome Home</h1>
-        <input
-          type="text"
-          placeholder="Search your fav monster...."
-          name="userinput"
-          value={userinput}
-          onChange={this.userHandler}
-          className="Input-card"
-        />
+      <div className="App">
+        <Searchbar userinput={userinput} searchHandle={this.userHandler} />
 
         <div className="Card-wrapper">{filteredList}</div>
       </div>
