@@ -4,10 +4,10 @@ const Main = () => {
 
     const [counter, setCounter] = useState(0)
 
-    const [decreaser, setDecreaser] = useState(0)
+    const [decreaser, setDecreaser] = useState(10)
     
     function decreaseHandler() {
-        if(decreaser < 0) return
+        if(decreaser <= 0) return
         setDecreaser(decreaser-1)
     }
 
@@ -23,9 +23,12 @@ const Main = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Cumque accusantium numquam dignissimos sint
                 in sed optio atque eius? Cum, saepe.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium, amet possimus placeat hic enim reprehenderit dicta, quia officia nisi saepe quasi odio suscipit quo. Ipsa, minima! Dolores in atque perspiciatis delectus neque itaque facilis debitis consequatur! Nemo?</p>
+           
             <h1> {counter} </h1>
-            <button onClick={handleClick} style={{cursor: 'pointer'}}>  Add + </button>
+            <h1> {decreaser} </h1>
+            <button onClick={handleClick} style={{ cursor: 'pointer'}}>  Add + </button>
+            <button onClick={decreaseHandler} style={{ cursor: 'pointer' }} >Substract - </button>
+            
         </div>
     )
 }

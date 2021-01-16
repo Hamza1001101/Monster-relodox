@@ -8,21 +8,28 @@ class App extends Component {
     
         this.state = {
             users: [],
-            
         }
     }
     
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(resp => resp.json())
-        .then(users => this.setState({users}))
+            .then(users => this.setState({users: users}) )
+    }
+    read = () =>  {
+        console.log(this.state.users)
     }
     
     render() {
+        const { users } = this.state
+        const listRender = users.map((user) => {
+            return <li key={user.id}> {user.name} {user.email} </li>
+        })
        return (
         <div>
             <h1>Welcome Home</h1>
-            <Main />
+               <Main />
+               {listRender}
         </div>
     )
 
