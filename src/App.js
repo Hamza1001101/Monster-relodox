@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Main from "./components/Main";
 import Template from "./components/Template";
 import "./App.css";
 
@@ -37,7 +36,7 @@ class App extends Component {
       ));
 
     return (
-      <div style={{ width: `55rem` }}>
+      <div>
         <h1>Welcome Home</h1>
         <input
           type="text"
@@ -48,9 +47,7 @@ class App extends Component {
           className="Input-card"
         />
 
-        <h4> {this.state.userinput} </h4>
         <div className="Card-wrapper">{filteredList}</div>
-        <Main />
       </div>
     );
   }

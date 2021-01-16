@@ -1,7 +1,17 @@
+/*General rules */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .Card-wrapper {
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
+    width: 85vw;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+
 }
 .Input-card {
     width: 12rem;
