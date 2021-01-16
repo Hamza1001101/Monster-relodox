@@ -23,11 +23,14 @@ const Main = () => {
         accusantium numquam dignissimos sint in sed optio atque eius? Cum,
         saepe.
       </p>
-
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+        dolore perferendis accusamus qui, vitae facilis nemo accusantium modi?
+        Excepturi veniam fuga culpa dolorum aperiam.
+      </p>
       <h1> {counter} </h1>
       <h1> {decreaser} </h1>
       <button onClick={handleClick} style={{ cursor: "pointer" }}>
-    
         Add +
       </button>
       <button

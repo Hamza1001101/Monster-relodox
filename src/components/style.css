@@ -1,0 +1,6 @@
+.Card-container {
+    border: 1px solid black;
+    width: 15rem;
+    margin: 1rem;
+    text-align: center;
+}
