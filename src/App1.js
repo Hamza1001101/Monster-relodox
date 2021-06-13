@@ -3,22 +3,30 @@ import "./App.css";
 import Searchbar from "./components/Searchbar";
 
 const App1 = () => {
-    const [user, setUser] = useState([]);
+    const [users, setUser] = useState([]);
     const [userinput, setUserinput] = useState("");
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((resp) => resp.json())
-      .then((users) => setUser(users));
+      .then((user) => setUser(user));
   }, []);
 
     const userHandler = (e) => {
       setUserinput(e.target.value);
     };
+    const filteredList = users.map((user) => {
+      return (
+        <div>
+          {" "}
+          {user.name} {user.username}{" "}
+        </div>
+      );
+    });
   return (
     <div>
       <Searchbar userinput={userinput} searchHandle={userHandler} />
-      <div className="Card-wrapper"> {user.name} </div>
+      <div className="Card-wrapper"> {filteredList} </div>
     </div>
   );
 };
