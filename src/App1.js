@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Searchbar from "./components/Searchbar";
+import Card from './components/Card'
 
 const App1 = () => {
     const [users, setUser] = useState([]);
@@ -15,14 +16,13 @@ const App1 = () => {
     const userHandler = (e) => {
       setUserinput(e.target.value);
     };
-    const filteredList = users.map((user) => {
-      return (
-        <div>
-          {" "}
-          {user.name} {user.username}{" "}
-        </div>
-      );
-    });
+    const filteredList = users.filter((user) => {
+        return (
+          user.name.toLowerCase().includes(userinput.toLowerCase())
+      )
+    }).map(({ id, name, username, email }) => (
+        <Card key={id} name={name} username={username} email={email} />
+    ));
   return (
     <div>
       <Searchbar userinput={userinput} searchHandle={userHandler} />
