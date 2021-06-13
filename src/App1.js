@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import "./App.css";
+import Searchbar from "./components/Searchbar";
 
 const App1 = () => {
-  const [user, setUser] = useState([]);
+    const [user, setUser] = useState([]);
+    const [userinput, setUserinput] = useState("");
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -9,10 +12,13 @@ const App1 = () => {
       .then((users) => setUser(users));
   }, []);
 
+    const userHandler = (e) => {
+      setUserinput(e.target.value);
+    };
   return (
     <div>
-      <h2>This is from the App1</h2>
-      {user.length}
+      <Searchbar userinput={userinput} searchHandle={userHandler} />
+      <div className="Card-wrapper"> {user.name} </div>
     </div>
   );
 };
